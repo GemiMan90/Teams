@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Register new player"/>
+    <PlayerAddition msg="Register new player"/>
   </div>
     
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import PlayerAddition from '@/components/PlayerAddition.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    PlayerAddition
   }
 }
 </script>

@@ -49,7 +49,7 @@ const axios = require('axios')
 
 
 export default {
-  name: 'HelloWorld',
+  name: 'PlayerAddition',
   props: {
     msg: String,
   },
