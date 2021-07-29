@@ -4,16 +4,20 @@
     
     <div v-for="team in teams" >
       <!-- <h2 > Players in team {{team}} :</h2> -->
-      <div v-for="player in team">
-        {{Object.keys(team)}}
+      <div v-for="(player,index) in team" key="index">
+        <!-- {{Object.keys(team)}} -->
+        {{index}}
+      
         
 
-        <div v-for="single in player">
+        <div v-for="(single,index) in player" key="index">
+          Player number {{index + 1}}
           <p>
-          {{Object.keys(team)[0]}}  
+          <!-- {{Object.keys(team)[0]}}   -->
           Player name : {{single.name}}<br>
           Player role : {{single.role}}<br>
-          Player photo : {{single.photo}}<br>
+          Player photo : <img :src="single.preview"> <br>
+          Player image: <img :src="single.image">
           </p>
         </div>
       </div>
