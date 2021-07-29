@@ -7,27 +7,28 @@
         <select v-model="playerRole">
         <option value="Tank">Tank</option>
         <option value="DPS">DPS</option>
+        <option value="Support">Support</option>
       </select>
       </p>
 
-        <div class="form-group">
-          <label for="my-file">Select Image: </label>
-          <input type="file" accept="image/*" @change="previewImage" class="form-control-file" id="my-file">
+      <div class="form-group">
+        <label for="my-file">Select Image: </label>
+        <input type="file" accept="image/*" @change="previewImage" class="form-control-file" id="my-file">
     
-          <div class="border p-2 mt-3">
-            <p>Preview Here:</p>
+        <div class="border p-2 mt-3">
+          <p>Preview Here:</p>
             <template v-if="preview">
               <img :src="preview" class="img-fluid" />
               <p class="mb-0">file name: {{ image.name }}</p>
               <p class="mb-0">size: {{ image.size/1024 }}KB</p>
                </template>
-          </div>
         </div>
+      </div>
             <button @click="addTeamOne">Add player to team 1</button>
             <button @click="addTeamTwo">Add player to team 2</button>
             <button @click="saveTeams">Register teams</button>
     </form> 
-  </div>
+</div>
 
 <div class='display' id="display">
     <p> Player name: {{playerName}}</p>
