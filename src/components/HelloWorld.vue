@@ -44,10 +44,8 @@
 </template>
 
 <script>
-//export let team1=[];
-//export let team2=[];
-const axios = require('axios')
 
+const axios = require('axios')
 
 
 export default {
@@ -59,7 +57,6 @@ export default {
     return{
     playerName:'Gemi',
     playerRole:"Tank",
-    photo:"",
     preview: null,
     image: null,
     team1: [],
@@ -70,26 +67,19 @@ export default {
   },
 
   methods: {
+
     addTeamOne(e) {
-      console.log(this.playerName,this.playerRole,this.preview);
-      //console.log(e)
-   
+      console.log(this.playerName,this.playerRole,this.preview,this.image);
       this.team1.push({name:this.playerName,role:this.playerRole,preview:this.preview,image:this.image})
       this.teams.teamOne = this.team1
       console.log(this.team1)
-      //this.$emit("addToTeamOne",this.team1)
+
     },
     addTeamTwo(e) {
-      console.log(this.playerName,this.playerRole);
-      //console.log(e)
-
+      console.log(this.playerName,this.playerRole,this.preview,this.image);
       this.team2.push({name:this.playerName,role:this.playerRole,preview:this.preview,image:this.image})
       this.teams.teamTwo = this.team2
       console.log(this.team2)
-      //this.$emit("addToTeamTwo",this.team2)
-   
-      //team1.push({name:this.playerName,role:this.playerRole,photo:this.image})
-      //console.log(team1)
     },
 
     saveTeams() {
@@ -106,9 +96,6 @@ export default {
 
     },
 
-    uploadPhoto() {
-      this.photo = this.$refs.photo.files[0]
-    },
     previewImage: function(event) {
       var input = event.target;
       if (input.files) {
@@ -124,8 +111,6 @@ export default {
     reset: function() {
       this.image = null;
       this.preview = null;
-      this.image_list = [];
-      this.preview_list = [];
     },
   },
 
